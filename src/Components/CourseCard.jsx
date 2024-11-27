@@ -13,7 +13,7 @@ const CourseCard = ({ image, title, mentor, fees, duration, id ,subscribed,setIs
     
       // subscription remove  logic
       try {
-        const res = await fetch(`http://localhost:8080/user/remove-subscription/${id}`, {
+        const res = await fetch(`https://rbac-backend-90gr.onrender.com/user/remove-subscription/${id}`, {
           method: 'PATCH',
           headers: {
             "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const CourseCard = ({ image, title, mentor, fees, duration, id ,subscribed,setIs
     } else {
       // Perform subscription logic
       try {
-        const res = await fetch(`http://localhost:8080/user/subscribe/${id}`, {
+        const res = await fetch(`https://rbac-backend-90gr.onrender.com/user/subscribe/${id}`, {
           method: 'PATCH',
           headers: {
             "Content-Type": "application/json",
