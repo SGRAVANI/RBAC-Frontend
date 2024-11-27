@@ -1,7 +1,7 @@
 // courseApi.js
  const fetchUserCourses = async () => {
     try {
-      const response = await fetch("http://localhost:8080/course/getData", {
+      const response = await fetch("https://rbac-backend-2wqn.onrender.com/course/getData", {
         method: "GET",
         headers: {
             "Content-Type":"application/json"
@@ -35,7 +35,7 @@
         formData.append("image", courseData.image); // Assuming the image is a file object
       }
        
-      const response = await fetch("http://localhost:8080/course/addCourse", {
+      const response = await fetch("https://rbac-backend-2wqn.onrender.com/course/addCourse", {
         method:"POST",
         body: formData,
         headers: {

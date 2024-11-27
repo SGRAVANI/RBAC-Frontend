@@ -14,7 +14,7 @@ function Profile() {
   let [mentorsCourses,setMentorCourses]=useState([])
   const fetchUserCourses = async () => {
     try {
-      const response = await fetch("http://localhost:8080/course/getData", {
+      const response = await fetch("https://rbac-backend-2wqn.onrender.com/course/getData", {
         method: "GET",
         headers: {
             "Content-Type":"application/json"
@@ -39,7 +39,7 @@ function Profile() {
   async function fetchCourses(userId)
   {
     try{
-    let res=await fetch("http://localhost:8080/user/getSubscriptions",{
+    let res=await fetch("https://rbac-backend-2wqn.onrender.com/user/getSubscriptions",{
       method:"GET",
       credentials:"include",
       headers:{
@@ -63,7 +63,7 @@ catch(e)
   function getUserData() {
     let id = searchParams.get('id');
     if (!id) {
-      fetch("http://localhost:8080/user/profile", {
+      fetch("https://rbac-backend-2wqn.onrender.com/user/profile", {
         method: "GET",
         credentials: "include"
       })
@@ -82,7 +82,7 @@ catch(e)
           console.log("Error occurred while fetching data");
         });
     } else {
-      fetch(`http://localhost:8080/user/profile/${id}`, {
+      fetch(`https://rbac-backend-2wqn.onrender.com/user/profile/${id}`, {
         method: "GET",
         credentials: "include"
       })

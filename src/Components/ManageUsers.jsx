@@ -8,7 +8,7 @@ function ManageUsers() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8080/admin/users", {
+    fetch("https://rbac-backend-2wqn.onrender.com/admin/users", {
       method: "GET",
       credentials: "include",
     })
@@ -38,7 +38,7 @@ function ManageUsers() {
   };
 
   const handleRoleChange = (userId, newRole) => {
-    fetch(`http://localhost:8080/admin/updateRole/${userId}`, {
+    fetch(`https://rbac-backend-2wqn.onrender.com/admin/updateRole/${userId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -64,7 +64,7 @@ function ManageUsers() {
 
   const handleDeleteUser = (userId) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
-      fetch(`http://localhost:8080/admin/deleteUser/${userId}`, {
+      fetch(`https://rbac-backend-2wqn.onrender.com/admin/deleteUser/${userId}`, {
         method: "DELETE",
         credentials: "include",
       })
@@ -86,7 +86,7 @@ function ManageUsers() {
   const handleStatusChange = (userId, currentStatus) => {
     const newStatus = currentStatus === "ACTIVE" ? "INACTIVE" : "ACTIVE";
 
-    fetch(`http://localhost:8080/admin/updateStatus/${userId}`, {
+    fetch(`https://rbac-backend-2wqn.onrender.com/admin/updateStatus/${userId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

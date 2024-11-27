@@ -34,7 +34,7 @@ const CoursePage = () => {
   async function handleDelete(courseId)
   {
     try{
-     let res=await fetch(`http://localhost:8080/course/deleteCourse/${courseId}`,{
+     let res=await fetch(`https://rbac-backend-2wqn.onrender.com/course/deleteCourse/${courseId}`,{
       method:"DELETE",
       headers:{
         "Content-Type":"application/json",

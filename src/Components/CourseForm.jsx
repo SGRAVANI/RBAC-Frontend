@@ -34,7 +34,7 @@ const CourseForm = ({fetchChange,setFetchChange}) => {
     if (courseData.image) {
       formData.append("image", courseData.image); // Assuming the image is a file object
     }
-    const response = await fetch('http://localhost:8080/course/addCourse', {
+    const response = await fetch('https://rbac-backend-2wqn.onrender.com/course/addCourse', {
         method: 'POST',
         body: formData, // Sending form data (including the file)
         credentials:"include"

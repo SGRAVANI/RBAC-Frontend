@@ -20,7 +20,7 @@ function Login() {
 
     let payload = { username: data.email, password: data.pwd };
 
-    fetch('https://rbac-backend-90gr.onrender.com/auth/login', {
+    fetch('https://rbac-backend-2wqn.onrender.com/auth/login', {
       method: 'POST',
       body: JSON.stringify(payload),
       headers: {

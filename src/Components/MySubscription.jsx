@@ -15,7 +15,7 @@ const MySubscription = () => {
 {
   try{
     setIsLoading(true)
-    let res=await fetch("http://localhost:8080/user/getSubscriptions",{
+    let res=await fetch("https://rbac-backend-2wqn.onrender.com/user/getSubscriptions",{
         method:"GET",
         credentials:"include",
         headers:{
