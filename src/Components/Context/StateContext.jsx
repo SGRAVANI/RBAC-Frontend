@@ -3,8 +3,12 @@ import React, { useEffect } from 'react'
 
 import { useState } from "react";
 function StateContext(props) {
-    const [user,setUser]=useState(JSON.parse(window.localStorage.getItem('user')))
-    const [isLogin,setIsLogin]=useState(window.localStorage.getItem('isLogin'))
+  const [user, setUser] = useState(() => {
+    return JSON.parse(localStorage.getItem("user")) || {};
+});
+const [isLogin, setIsLogin] = useState(() => {
+  return localStorage.getItem("isLogin") === "true"?"true":"false";
+});
     const [courseData,setCourseData]=useState([])
     useEffect(()=>{
         
