@@ -45,6 +45,16 @@ Use the following credentials to explore admin functionality:
 - **Email:** admin@rbac.com
 - **Password:** Admin@1234
 
+### Technology Stack
+
+**Front-End:**
+- **React**: A JavaScript library used to build the user interface. React allows for efficient component-based development and a fast, dynamic user experience.
+- **Tailwind CSS**: A utility-first CSS framework used to style the application. Tailwind CSS helps in creating responsive, customizable designs with minimal effort, focusing on utility classes for rapid development.
+
+**Back-End:**
+- **Express.js**: A fast and minimalist web framework for Node.js, used for handling HTTP requests, routing, and middlewares in the back-end.
+- **Node.js**: A JavaScript runtime used for building the server-side of the application. It allows JavaScript to be run outside the browser, making it ideal for full-stack development.
+- **MongoDB**: A NoSQL database used to store data in a flexible, JSON-like format. MongoDB offers high scalability and is well-suited for modern, data-driven applications.
 
 
 ## Setup and Installation
@@ -52,21 +62,17 @@ Use the following credentials to explore admin functionality:
 ### 1. Clone the Repository of front end
 git clone https://github.com/SGRAVANI/RBAC-Frontend.git
 ### 2. Install Dependencies
-npm i
+npm install
 ### 3.  clone  the Repository of backend
 git clone https://github.com/SGRAVANI/RBAC-backend.git
 ### 4.Install the Dependencies of backend 
-npm i
+npm install
 
 
-
-
-## Documentation
-
-[Documentation](https://linktodocumentation)
 
 
 ## Demo
 
-Insert gif or link to demo
+ gif of demo
 
+![RBAC Animation](https://raw.githubusercontent.com/SGRAVANI/RBAC-Frontend/main/public/images/RBAC-gif.gif)
