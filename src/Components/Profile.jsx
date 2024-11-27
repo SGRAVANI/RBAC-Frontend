@@ -120,9 +120,9 @@ catch(e)
             {/* Profile Image - You can use a default or user's image if available */}
             <div className="w-[80%] h-[80%] rounded-full overflow-hidden mb-6">
               {/* <img src={user.profileImage || 'https://via.placeholder.com/150'} alt="User Avatar" className="w-full h-full object-cover" /> */}
-              {cont.user.role=="STUDENT" &&  <img src="../../public/images/student.jpg" alt="User Avatar" className="w-full h-full object-cover" />}
-              {cont.user.role=="ADMIN" &&  <img src="../../public/images/admin.png" alt="User Avatar" className="w-[100%] h-[60%] object-contain overflow-hidden" />}
-              {cont.user.role=="MENTOR" &&  <img src="../../public/images/teacher.png" alt="User Avatar" className="w-full h-full object-cover "  />}
+              {cont.user.role=="STUDENT" &&  <img src="/images/student.jpg" alt="User Avatar" className="w-full h-full object-cover" />}
+              {cont.user.role=="ADMIN" &&  <img src="/images/admin.png" alt="User Avatar" className="w-[100%] h-[60%] object-contain overflow-hidden" />}
+              {cont.user.role=="MENTOR" &&  <img src="/images/teacher.png" alt="User Avatar" className="w-full h-full object-cover "  />}
             </div>
             <h2 className="text-xl font-semibold text-gray-700">{user.name || 'User Name'}</h2>
             <p className="text-gray-500">{user.role || 'Role'}</p>
