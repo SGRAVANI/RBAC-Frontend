@@ -10,7 +10,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function handleLogOut() {
-    fetch("http://localhost:8080/auth/logout", {
+    fetch("https://rbac-backend-2wqn.onrender.com/auth/logout", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

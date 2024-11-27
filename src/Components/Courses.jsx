@@ -11,7 +11,7 @@ const Courses = () => {
   async function fetchCourses()
 {
   try{
-    let res=await fetch("http://localhost:8080/course/allCourses")
+    let res=await fetch("https://rbac-backend-2wqn.onrender.com/course/allCourses")
     let data=await res.json()
     if(res.status==200){
       setCourseData(data.courses)
