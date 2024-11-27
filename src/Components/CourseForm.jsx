@@ -50,7 +50,7 @@ const CourseForm = ({fetchChange,setFetchChange}) => {
         setDuration('')
         setFees('')
         setImage('')
-        navigate('/courses'); // Redirect to blogs page after successful post
+        //navigate('/c'); // Redirect to blogs page after successful post
         setFetchChange(!fetchChange)
       } else {
         alert('Failed to create blog');
