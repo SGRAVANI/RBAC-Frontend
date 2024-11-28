@@ -184,6 +184,16 @@ function Navbar() {
               Home
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "text-rose-400 font-semibold" : "hover:text-rose-400"
+              }
+              to="/courses"
+            >
+              Courses
+            </NavLink>
+          </li>
           {cont.isLogin === "false" && (
             <>
               <li>
