@@ -3,11 +3,23 @@ import CourseCard from './CourseCard';
 import { Context } from './Context/ContextData';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import Alert from './Alert';
 const Courses = () => {
-  
+  let [errorOb,setErrorOb]=useState({variant:'',msg:''})  
   let [courseData,setCourseData]=useState([]) 
   let cont=useContext(Context)
-  let navigate=useNavigate()
+  let [f,setF]=useState(false)
+   let navigate=useNavigate()
+   useEffect(()=>{
+    if(f)
+    {
+    setTimeout(()=>{
+     setF(false)
+     setErrorOb({msg:'',variant:''})
+    },2500)
+  }
+   },[f])
   async function fetchCourses()
 {
   try{
@@ -55,9 +67,14 @@ useEffect(()=>{
             fees={course.fees}
             duration={course.duration}
             id={course._id}
+            errorOb={errorOb}
+            setErrorOb={setErrorOb}
+            f={f}
+            setF={setF}
           />
         ))}
       </div>
+     {f&& <Alert variant={errorOb.variant} message={errorOb.msg} />}
     </div>
   );
 };

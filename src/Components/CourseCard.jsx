@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react';
 import { Context } from './Context/ContextData';
 import { useNavigate } from 'react-router-dom';
 
-const CourseCard = ({ image, title, mentor, fees, duration, id ,subscribed,setIsUpdated,isUpdated}) => {
+const CourseCard = ({ image, title, mentor, fees, duration, id ,subscribed,setIsUpdated,isUpdated,errorOb,setErrorOb,f,setF}) => {
   const [flashMessage, setFlashMessage] = useState(''); // State for the flash message
   const [flashType, setFlashType] = useState('info'); // Type of message ('info', 'success', 'error')
   const cont = useContext(Context); // Assume `cont.isLogin` holds user login status
@@ -26,13 +26,16 @@ const CourseCard = ({ image, title, mentor, fees, duration, id ,subscribed,setIs
           setFlashMessage(data.message);
           setFlashType('success');
           setIsUpdated(!isUpdated)
+          setErrorOb({variant:"success",msg:data.message})
         } else {
           setFlashMessage(data.message);
           setFlashType('error');
+          setErrorOb({variant:"error",msg:data.message})
         }
       } catch (error) {
         setFlashMessage('An error occurred. Please try again later.');
         setFlashType('error');
+        setErrorOb({variant:"error",msg:'An error occurred. Please try again later.'})
       }
 
       // Clear flash message after 3 seconds
@@ -47,8 +50,11 @@ const CourseCard = ({ image, title, mentor, fees, duration, id ,subscribed,setIs
       // Show flash message if the user is not logged in
       setFlashMessage('Please log in to subscribe!');
       setFlashType('error');
+      setErrorOb({variant:"error",msg:'Please log in to subscribe!'})
+      setF(true)
       setTimeout(() => {
         setFlashMessage('');
+        
         navigate("/login");
       }, 2500); // Clear message and navigate after 2.5 seconds
     } else {
@@ -66,14 +72,20 @@ const CourseCard = ({ image, title, mentor, fees, duration, id ,subscribed,setIs
         if (res.status === 200) {
           setFlashMessage(data.message);
           setFlashType('success');
+          setF(true)
+          setErrorOb({variant:"success",msg:data.message})
          // setIsUpdated(!setIsUpdated)
         } else {
+          setF(true)
           setFlashMessage(data.message);
           setFlashType('error');
+          setErrorOb({variant:"error",msg:data.message})
         }
       } catch (error) {
         setFlashMessage('An error occurred. Please try again later.');
+        setF(true)
         setFlashType('error');
+        setErrorOb({variant:"error",msg:"An error occurred. Please try again later."})
       }
 
       // Clear flash message after 3 seconds
