@@ -26,6 +26,7 @@ const CourseCard = ({ image, title, mentor, fees, duration, id ,subscribed,setIs
          // setFlashMessage(data.message);
           //setFlashType('success');
           setIsUpdated(!isUpdated)
+          setF(true)
           setErrorOb({variant:"success",msg:data.message})
         } else {
           //setFlashMessage(data.message);
