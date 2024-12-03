@@ -7,9 +7,10 @@ import { useNavigate } from 'react-router-dom';
 import Alert from './Alert';
 const Courses = () => {
   let [errorOb,setErrorOb]=useState({variant:'',msg:''})  
+  let [f,setF]=useState(false)
   let [courseData,setCourseData]=useState([]) 
   let cont=useContext(Context)
-  let [f,setF]=useState(false)
+  
    let navigate=useNavigate()
    useEffect(()=>{
     if(f)

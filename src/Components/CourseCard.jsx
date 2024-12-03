@@ -23,33 +23,35 @@ const CourseCard = ({ image, title, mentor, fees, duration, id ,subscribed,setIs
         const data = await res.json();
 
         if (res.status === 200||res.status===201) {
-          setFlashMessage(data.message);
-          setFlashType('success');
+         // setFlashMessage(data.message);
+          //setFlashType('success');
           setIsUpdated(!isUpdated)
           setErrorOb({variant:"success",msg:data.message})
         } else {
-          setFlashMessage(data.message);
-          setFlashType('error');
+          //setFlashMessage(data.message);
+          //setFlashType('error');
+          setF(true)
           setErrorOb({variant:"error",msg:data.message})
         }
       } catch (error) {
-        setFlashMessage('An error occurred. Please try again later.');
-        setFlashType('error');
-        setErrorOb({variant:"error",msg:'An error occurred. Please try again later.'})
+        //setFlashMessage('An error occurred. Please try again later.');
+       // setFlashType('error');
+       setF(true) 
+       setErrorOb({variant:"error",msg:'An error occurred. Please try again later.'})
       }
 
       // Clear flash message after 3 seconds
-      setTimeout(() => {
-        setFlashMessage('');
-      }, 3000);
+     // setTimeout(() => {
+        //setFlashMessage('');
+      //}, 3000);
     
   };
   const handleSubscribe = async () => {
     setFlashMessage('');
     if (cont.isLogin === "false") {
       // Show flash message if the user is not logged in
-      setFlashMessage('Please log in to subscribe!');
-      setFlashType('error');
+      //setFlashMessage('Please log in to subscribe!');
+      //setFlashType('error');
       setErrorOb({variant:"error",msg:'Please log in to subscribe!'})
       setF(true)
       setTimeout(() => {
@@ -70,28 +72,28 @@ const CourseCard = ({ image, title, mentor, fees, duration, id ,subscribed,setIs
         const data = await res.json();
 
         if (res.status === 200) {
-          setFlashMessage(data.message);
-          setFlashType('success');
+        //  setFlashMessage(data.message);
+          //setFlashType('success');
           setF(true)
           setErrorOb({variant:"success",msg:data.message})
          // setIsUpdated(!setIsUpdated)
         } else {
           setF(true)
-          setFlashMessage(data.message);
-          setFlashType('error');
+          //setFlashMessage(data.message);
+          //setFlashType('error');
           setErrorOb({variant:"error",msg:data.message})
         }
       } catch (error) {
-        setFlashMessage('An error occurred. Please try again later.');
+        //setFlashMessage('An error occurred. Please try again later.');
         setF(true)
-        setFlashType('error');
+        //setFlashType('error');
         setErrorOb({variant:"error",msg:"An error occurred. Please try again later."})
       }
 
       // Clear flash message after 3 seconds
-      setTimeout(() => {
-        setFlashMessage('');
-      }, 3000);
+      // setTimeout(() => {
+      //   setFlashMessage('');
+      // }, 3000);
     }
   };
 
